@@ -31,12 +31,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="navbar-brand" href="#">Tasks, <small th:text="${user.name}"></small></a>
                 <a class="nav-item nav-link" href="index">Главная</a>
-                <a class="nav-item nav-link" th:href="@{/tasks}">Все задачи</a>
-                <a class="nav-item nav-link" th:href="@{/newTasks}">Новые задачи</a>
-                <a class="nav-item nav-link" th:href="@{/doneTasks}">Завершенные задачи</a>
-                <a class="nav-item nav-link active" th:href="@{/formAddTask}">Добавить Задачу</a>
+                <a class="nav-item nav-link" th:href="@{/allAccidents}">Все несчастные случаи</a>
+
             </div>
         </div>
     </nav>
@@ -55,12 +52,7 @@
                 <td>
                     <span th:text="${accident.id}"></span>
                 </td>
-                <td>
-                    <a th:href="@{|/accident/${accident.id}|}">
-                        <i class="fa fa-edit"></i>
-                        <span th:text="${accident.description}"></span>
-                    </a>
-                </td>
+
                 <td th:text="${accident.name}"></td>
                 <td th:text="${accident.text}"></td>
                 <td th:text="${accident.address}"></td>
