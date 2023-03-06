@@ -11,4 +11,10 @@ public class IndexController {
         model.addAttribute("user", "Petr Arsentev");
         return "index";
     }
+
+    @GetMapping("/index")
+    public String getIndex23(Model model) {
+        model.addAttribute("user", "Petr Arsentev");
+        return "index";
+    }
 }

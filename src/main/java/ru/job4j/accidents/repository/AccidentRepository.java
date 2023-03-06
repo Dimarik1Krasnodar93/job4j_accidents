@@ -22,4 +22,8 @@ public class AccidentRepository {
     public List<Accident> findAllAccidents() {
         return crudRepository.query(FIND_ALL_ACCIDENTS, Accident.class, new HashMap<>());
     }
+
+    public void create(Accident accident) {
+        crudRepository.run(session -> session.save(accident));
+    }
 }

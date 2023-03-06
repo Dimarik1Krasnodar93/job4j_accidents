@@ -13,4 +13,8 @@ public class AccidentService {
     public List<Accident> getAllAccidents() {
         return accidentRepository.findAllAccidents();
     }
+
+    public void create(Accident accident) {
+
+    }
 }
