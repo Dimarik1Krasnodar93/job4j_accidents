@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface AccidentRepository {
      List<Accident> findAllAccidents();
+     void save(Accident accident);
+     void update(Accident accident);
+     Accident getById(int id);
 }

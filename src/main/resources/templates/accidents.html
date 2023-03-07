@@ -33,7 +33,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="index">Главная</a>
                 <a class="nav-item nav-link" th:href="@{/allAccidents}">Все несчастные случаи</a>
-
+                <a class="nav-item nav-link" th:href="@{/formCreateAccident}">Добавить</a>
             </div>
         </div>
     </nav>
@@ -50,7 +50,11 @@
             <tbody>
             <tr th:each="accident: ${accidents}">
                 <td>
-                    <span th:text="${accident.id}"></span>
+                    <a th:href="@{|/formUpdateAccident/${accident.id}|}">
+                        <i class="fa fa-edit"></i>
+                        <span th:text="${accident.id}"></span>
+                    </a>
+
                 </td>
 
                 <td th:text="${accident.name}"></td>

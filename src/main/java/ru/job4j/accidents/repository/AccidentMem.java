@@ -3,9 +3,7 @@ package ru.job4j.accidents.repository;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Accident;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
@@ -23,4 +21,24 @@ public class AccidentMem implements AccidentRepository {
     public List<Accident> findAllAccidents() {
         return map.values().stream().toList();
     }
+
+    @Override
+    public void save(Accident accident) {
+        int newId = map.keySet().stream()
+                .max(Comparator.naturalOrder()).orElse(0) + 1;
+        accident.setId(newId);
+        map.put(newId, accident);
+    }
+
+    @Override
+    public void update(Accident accident) {
+        map.put(accident.getId(), accident);
+    }
+
+    @Override
+    public Accident getById(int id) {
+        return map.get(id);
+    }
+
+
 }
