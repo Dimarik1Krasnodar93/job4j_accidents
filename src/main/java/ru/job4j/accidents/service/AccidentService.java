@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
 import ru.job4j.accidents.model.Rule;
+import ru.job4j.accidents.repository.AccidentJdbcTemplate;
 import ru.job4j.accidents.repository.AccidentRepository;
 import ru.job4j.accidents.repository.AccidentTypeRepository;
 import ru.job4j.accidents.repository.RuleRepository;
@@ -16,6 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class AccidentService {
     public AccidentRepository accidentRepository;
+    private final AccidentJdbcTemplate accidentJdbcTemplate;
     public AccidentTypeRepository accidentTypeRepository;
     public RuleRepository ruleRepository;
 
@@ -32,7 +34,7 @@ public class AccidentService {
     }
 
     public void create(Accident accident) {
-        accidentRepository.save(accident);
+        accidentJdbcTemplate.save(accident);
     }
 
     public Set<Rule> getRulesByStringArray(String[] array) {
