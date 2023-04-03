@@ -2,6 +2,7 @@ package ru.job4j.accidents.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Accident;
+import ru.job4j.accidents.model.AccidentType;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,8 +13,10 @@ public class AccidentMem implements AccidentRepository {
     private Map<AtomicInteger, Accident> map = new ConcurrentHashMap<>();
 
     public AccidentMem() {
-        Accident accident1 = new Accident(new AtomicInteger(1), "DTP1", "2 cars", "Moscow");
-        Accident accident2 = new Accident(new AtomicInteger(2), "DTP2", "2 cars", "Rostov");
+        Accident accident1 = new Accident(new AtomicInteger(1), "DTP1", "2 cars",
+                "Moscow", new AccidentType(1, "text"));
+        Accident accident2 = new Accident(new AtomicInteger(2), "DTP2", "2 cars",
+                "Rostov", new AccidentType(1, "text"));
         map.put(accident1.getId(), accident1);
         map.put(accident2.getId(), accident2);
     }

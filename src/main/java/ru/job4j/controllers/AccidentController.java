@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.accidents.model.Accident;
+import ru.job4j.accidents.model.AccidentType;
 import ru.job4j.accidents.service.AccidentService;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @Controller
@@ -22,10 +22,11 @@ public class AccidentController {
         return "accidents";
     }
 
-    @GetMapping("/formCreateAccident")
+
+    @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
-        Accident accident = new Accident();
-        model.addAttribute("accident", accident);
+        List<AccidentType> types = accidentService.getAllAccidentTypes();
+        model.addAttribute("types", types);
         return "createAccident";
     }
 
@@ -38,8 +39,10 @@ public class AccidentController {
 
     @PostMapping("/saveAccident")
     public String save(@ModelAttribute Accident accident) {
+        AccidentType accidentType = accidentService.getAccidentTypeById(accident.getType().getId());
+        accident.setType(accidentType);
         accidentService.create(accident);
-        return "redirect:/allAccidents";
+        return "redirect:/accidents";
     }
 
     @PostMapping("/updateAccident")
