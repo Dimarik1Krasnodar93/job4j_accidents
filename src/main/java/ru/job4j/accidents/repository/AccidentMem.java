@@ -14,9 +14,9 @@ public class AccidentMem implements AccidentRepository {
 
     public AccidentMem() {
         Accident accident1 = new Accident(new AtomicInteger(1), "DTP1", "2 cars",
-                "Moscow", new AccidentType(1, "text"));
+                "Moscow", new AccidentType(1, "text"), new HashSet<>());
         Accident accident2 = new Accident(new AtomicInteger(2), "DTP2", "2 cars",
-                "Rostov", new AccidentType(1, "text"));
+                "Rostov", new AccidentType(1, "text"), new HashSet<>());
         map.put(accident1.getId(), accident1);
         map.put(accident2.getId(), accident2);
     }

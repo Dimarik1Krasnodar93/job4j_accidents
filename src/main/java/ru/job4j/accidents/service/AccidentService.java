@@ -4,16 +4,21 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
+import ru.job4j.accidents.model.Rule;
 import ru.job4j.accidents.repository.AccidentRepository;
 import ru.job4j.accidents.repository.AccidentTypeRepository;
+import ru.job4j.accidents.repository.RuleRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
 public class AccidentService {
     public AccidentRepository accidentRepository;
     public AccidentTypeRepository accidentTypeRepository;
+    public RuleRepository ruleRepository;
+
     public List<Accident> getAllAccidents() {
         return accidentRepository.findAllAccidents();
     }
@@ -28,6 +33,10 @@ public class AccidentService {
 
     public void create(Accident accident) {
         accidentRepository.save(accident);
+    }
+
+    public Set<Rule> getRulesByStringArray(String[] array) {
+        return ruleRepository.findByStringArray(array);
     }
 
     public void update(Accident accident) {
