@@ -22,7 +22,7 @@ public class AccidentJdbcTemplate {
         return jdbc.query("select id, name from accidents",
                 (rs, row) -> {
                     Accident accident = new Accident();
-                    accident.setId(new AtomicInteger(rs.getInt("id")));
+                    accident.setId(rs.getInt("id"));
                     accident.setName(rs.getString("name"));
                     return accident;
                 });
