@@ -1,6 +1,6 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.repository;
 
-import ru.job4j.accidents.model.Accident;
+import ru.job4j.model.Accident;
 
 import java.util.List;
 

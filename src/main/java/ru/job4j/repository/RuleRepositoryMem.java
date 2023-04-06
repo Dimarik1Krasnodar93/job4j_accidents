@@ -1,7 +1,7 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.job4j.accidents.model.Rule;
+import ru.job4j.model.Rule;
 
 import java.util.HashSet;
 import java.util.List;

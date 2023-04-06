@@ -1,14 +1,14 @@
-package ru.job4j.accidents.service;
+package ru.job4j.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.job4j.accidents.model.Accident;
-import ru.job4j.accidents.model.AccidentType;
-import ru.job4j.accidents.model.Rule;
-import ru.job4j.accidents.repository.AccidentJdbcTemplate;
-import ru.job4j.accidents.repository.AccidentRepository;
-import ru.job4j.accidents.repository.AccidentTypeRepository;
-import ru.job4j.accidents.repository.RuleRepository;
+import ru.job4j.model.Accident;
+import ru.job4j.model.AccidentType;
+import ru.job4j.model.Rule;
+import ru.job4j.repository.AccidentJdbcTemplate;
+import ru.job4j.repository.AccidentRepository;
+import ru.job4j.repository.AccidentTypeRepository;
+import ru.job4j.repository.RuleRepository;
 
 import java.util.List;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package ru.job4j.accidents.model;
+package ru.job4j.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Rule {
+public class AccidentType {
     @EqualsAndHashCode.Include
     private int id;
 

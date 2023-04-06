@@ -1,10 +1,10 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.repository;
 
 import lombok.AllArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import ru.job4j.accidents.model.Accident;
+import ru.job4j.model.Accident;
 
 import java.util.List;
 

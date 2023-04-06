@@ -1,4 +1,4 @@
-package ru.job4j.accidents.model;
+package ru.job4j.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 @AllArgsConstructor

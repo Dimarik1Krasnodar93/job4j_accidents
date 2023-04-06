@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.accidents.model.Accident;
-import ru.job4j.accidents.model.AccidentType;
-import ru.job4j.accidents.model.Rule;
-import ru.job4j.accidents.service.AccidentService;
+import ru.job4j.model.Accident;
+import ru.job4j.model.AccidentType;
+import ru.job4j.model.Rule;
+import ru.job4j.service.AccidentService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
