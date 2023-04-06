@@ -21,6 +21,24 @@
     <liquibase.config>db/liquibase.properties</liquibase.config>
   </properties>
 
+  <profiles>
+    <profile>
+      <id>test</id>
+      <properties>
+        <liquibase.config>db/liquibase_test.properties</liquibase.config>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>production</id>
+      <properties>
+        <liquibase.config>db/liquibase.properties</liquibase.config>
+      </properties>
+    </profile>
+  </profiles>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
