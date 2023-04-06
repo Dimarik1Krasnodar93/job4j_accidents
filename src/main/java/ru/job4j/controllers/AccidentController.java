@@ -8,6 +8,8 @@ import ru.job4j.model.Accident;
 import ru.job4j.model.AccidentType;
 import ru.job4j.model.Rule;
 import ru.job4j.service.AccidentService;
+import ru.job4j.service.AccidentTypeService;
+import ru.job4j.service.RuleService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -17,6 +19,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class AccidentController {
     AccidentService accidentService;
+    AccidentTypeService accidentTypeService;
+    RuleService ruleService;
+
 
     @GetMapping("/accidents")
     public String getAllAccidents(Model model) {
@@ -28,7 +33,7 @@ public class AccidentController {
 
     @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
-        List<AccidentType> types = accidentService.getAllAccidentTypes();
+        List<AccidentType> types = accidentTypeService.getAllAccidentTypes();
         model.addAttribute("types", types);
         List<Rule> rules = List.of(
                 new Rule(1, "Статья. 1"),
@@ -49,9 +54,9 @@ public class AccidentController {
     @PostMapping("/saveAccident")
     public String save(@ModelAttribute Accident accident, HttpServletRequest req) {
         String[] ids = req.getParameterValues("rIds");
-        Set<Rule> set = accidentService.getRulesByStringArray(ids);
+        Set<Rule> set = ruleService.getRulesByStringArray(ids);
         accident.setRules(set);
-        AccidentType accidentType = accidentService.getAccidentTypeById(accident.getType().getId());
+        AccidentType accidentType = accidentTypeService.getAccidentTypeById(accident.getType().getId());
         accident.setType(accidentType);
         accidentService.create(accident);
         return "redirect:/accidents";
