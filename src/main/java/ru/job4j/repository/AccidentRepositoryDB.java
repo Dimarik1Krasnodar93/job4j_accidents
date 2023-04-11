@@ -10,11 +10,11 @@ import java.util.List;
 @Repository
 public class AccidentRepositoryDB {
     private final SessionFactory sessionFactory;
-    private final CrudRepository crudRepository;
+    private final CrudRepositoryMy crudRepository;
 
     public static final String FIND_ALL_ACCIDENTS = "SELECT a FROM Accident a";
 
-    public AccidentRepositoryDB(SessionFactory sessionFactory, CrudRepository crudRepository) {
+    public AccidentRepositoryDB(SessionFactory sessionFactory, CrudRepositoryMy crudRepository) {
         this.sessionFactory = sessionFactory;
         this.crudRepository = crudRepository;
     }

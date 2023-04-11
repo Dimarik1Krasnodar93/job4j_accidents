@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
-public class AccidentMem implements AccidentRepository {
+public class AccidentMem implements AccidentRepositoryMy {
     private Map<AtomicInteger, Accident> map = new ConcurrentHashMap<>();
 
     public AccidentMem() {

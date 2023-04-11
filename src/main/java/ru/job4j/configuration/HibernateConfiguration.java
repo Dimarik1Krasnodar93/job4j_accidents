@@ -6,12 +6,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class HibernateConfiguration {
 
-    @Bean(destroyMethod = "close")
-    public SessionFactory sessionFactory() {
-        var registry = new StandardServiceRegistryBuilder().configure().build();
-        return new MetadataSources(registry).buildMetadata().buildSessionFactory();
-    }
+//    @Bean(destroyMethod = "close")
+//    public SessionFactory sessionFactory() {
+//        var registry = new StandardServiceRegistryBuilder().configure().build();
+//        return new MetadataSources(registry).buildMetadata().buildSessionFactory();
+//    }
 }

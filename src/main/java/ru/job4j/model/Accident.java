@@ -22,6 +22,11 @@ public class Accident {
     private String name;
     private String text;
     private String address;
+
+    @ManyToOne
+    @JoinColumn(name = "accident_type_id")
     private AccidentType type;
+    @ManyToMany
+    @JoinColumn (name = "rule_id")
     private Set<Rule> rules;
 }

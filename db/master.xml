@@ -10,4 +10,9 @@
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <include file="scripts/001_ddl_create_accidents_table.sql" relativeToChangelogFile="true"/>
     <include file="scripts/002_dml_insert_accidents.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/003_create_rules.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/004_create_accident_types.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/005_alter_accidents_add_accident_type.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/006_alter_accidents_add_rule.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/007_alter_table_accidents_rename.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
