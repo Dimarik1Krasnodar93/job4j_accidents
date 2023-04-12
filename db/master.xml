@@ -15,4 +15,5 @@
     <include file="scripts/005_alter_accidents_add_accident_type.sql" relativeToChangelogFile="true"/>
     <include file="scripts/006_alter_accidents_add_rule.sql" relativeToChangelogFile="true"/>
     <include file="scripts/007_alter_table_accidents_rename.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/008_security.schema.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
