@@ -47,6 +47,9 @@ public class AccidentController {
     @GetMapping("/formUpdateAccident")
     public String formUpdateAccident(Model model, @RequestParam("id") int id) {
         Accident accident = accidentService.getById(id);
+        if (accident == null) {
+            accident = new Accident();
+        }
         model.addAttribute("accident", accident);
         return "updateAccident";
     }

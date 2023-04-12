@@ -43,7 +43,7 @@ class AccidentControllerTest {
     @Test
     @WithMockUser
     public void formUpdateAccident() throws Exception {
-        this.mockMvc.perform(get("/formUpdateAccident"))
+        this.mockMvc.perform(get("/formUpdateAccident?id=1"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("updateAccident"));
