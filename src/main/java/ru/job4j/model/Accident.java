@@ -29,4 +29,12 @@ public class Accident {
     @ManyToMany
     @JoinColumn (name = "rule_id")
     private Set<Rule> rules;
+
+    @Override
+    public String toString() {
+        return "Accident{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

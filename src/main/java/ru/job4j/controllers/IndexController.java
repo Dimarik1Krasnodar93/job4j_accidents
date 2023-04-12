@@ -1,18 +1,17 @@
 package ru.job4j.controllers;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.job4j.repository.AccidentHibernate;
+import ru.job4j.service.AccidentService;
 
 @Controller
+@AllArgsConstructor
 public class IndexController {
     private final AccidentHibernate accidents;
-
-    public IndexController(AccidentHibernate accidents) {
-        this.accidents = accidents;
-    }
 
     @GetMapping("/")
     public String index(Model model) {
