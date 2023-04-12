@@ -1,0 +1,1 @@
+ALTER TABLE accidents ADD COLUMN address text;
