@@ -66,12 +66,10 @@ class AccidentControllerTest {
     @Test
     @WithMockUser
     public void save() throws Exception {
-        String [] array = new String[1];
-        array[0] = "1";
         this.mockMvc.perform(post("/saveAccident")
                         .param("name", "Инцидент1")
                         .param("type.id", "1")
-                        .param("rIds",array)
+                        .param("rIds", new String[] {"1"})
                 )
                 .andDo(print())
                 .andExpect(status().is3xxRedirection());
@@ -83,8 +81,6 @@ class AccidentControllerTest {
     @Test
     @WithMockUser
     public void update() throws Exception {
-        String [] array = new String[1];
-        array[0] = "1";
         this.mockMvc.perform(post("/updateAccident")
                         .param("name", "Инцидент1")
                         .param("type.id", "1")

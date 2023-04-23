@@ -2,6 +2,7 @@ package ru.job4j.controllers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import ru.job4j.service.RuleService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -30,7 +32,6 @@ public class AccidentController {
         model.addAttribute("accidents", accidents);
         return "accidents";
     }
-
 
     @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
